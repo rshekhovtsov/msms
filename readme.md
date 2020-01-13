@@ -2,7 +2,7 @@
 
 ## SETUP
 
-##1. CREATE TELEGRAM BOT
+## 1. CREATE TELEGRAM BOT
 - find @botfather in telegram and follow instructions
 - get api key for you bot from @botfather and put it into file: telegram-api.key
 
