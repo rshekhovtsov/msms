@@ -18,17 +18,22 @@ SETUP
  - MSMS_EXPECTED or MSMS_EXPECTED_FILE: expected service response. Use MSMS_EXPECTED_FILE for long responses.
  - MSMS_RECIPIENTS: file with recipients chat ids
 - example:
+```
 MSMS_SERVICE_NAME='my service'
 MSMS_SERVICE_ENDPOINT='http://0.0.0.0'
 MSMS_CURL_PARAMS='-s -X POST -H "Content-Type: application/json" --connect-timeout 3 -m 7 -d @request.json'
 MSMS_EXPECTED='{"ok","true"}'
 # MSMS_EXPECTED_FILE='my-service-response.json'
 MSMS_RECIPIENTS='my-service-recipients.txt'
-
+```
 4. RUN ON SCHEDULE
 - run: sudo crontab -e
 - to check service every minute and send alert if service unavailable or response unexpectedly, add line:
+```
 */1 * * * * /drclinics/bot/monitoring/monitoring.sh >> /drclinics/bot/monitoring/monitoring.log 2>&1
+```
 - to enable alert every day at 11:00AM as confirmation that monitoring itself is alive, add line:
+```
 0 11 * * * /drclinics/bot/monitoring.sh DAILY >> /drclinics/telemed/logs/monitoring.log 2>&1
+```
 - run: sudo service cron reload
