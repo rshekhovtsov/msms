@@ -11,15 +11,15 @@ Simple script to monitore web services using native linux tools: bash, curl & cr
 
 ### 2. ADD RECIPIENTS
 - recipient should find your bot in telegram and /start it
-- then run ./recipients-setup.sh and follow instruction
+- then run ```./recipients-setup.sh``` and follow instruction
 
 ### 3. CONFIGURE SERVICES TO MONITORE
 - for each service create in folder "services" .ini file with 5 keys:
- - MSMS_SERVICE_NAME: human-readable name for service
- - MSMS_SERVICE_ENDPOINT: your service endpoint to check with curl
- - MSMS_CURL_PARAMS: parameters for curl, see example below
- - MSMS_EXPECTED or MSMS_EXPECTED_FILE: expected service response. Use MSMS_EXPECTED_FILE for long responses.
- - MSMS_RECIPIENTS: file with recipients chat ids
+ - **MSMS_SERVICE_NAME** - human-readable name for service
+ - **MSMS_SERVICE_ENDPOINT** - your service endpoint to check with curl
+ - **MSMS_CURL_PARAMS** - parameters for curl, see example below
+ - **MSMS_EXPECTED** or **MSMS_EXPECTED_FILE** - expected service response. Use **MSMS_EXPECTED_FILE** for long responses.
+ - **MSMS_RECIPIENTS** - file with recipients chat ids
 - example:
 ```
 MSMS_SERVICE_NAME='my service'
@@ -30,7 +30,7 @@ MSMS_EXPECTED='{"ok","true"}'
 MSMS_RECIPIENTS='my-service-recipients.txt'
 ```
 ### 4. RUN ON SCHEDULE
-- run: sudo crontab -e
+- run: ```sudo crontab -e```
 - to check service every minute and send alert if service unavailable or response unexpectedly, add line:
 ```
 */1 * * * * /drclinics/bot/monitoring/monitoring.sh >> /drclinics/bot/monitoring/monitoring.log 2>&1
@@ -39,4 +39,4 @@ MSMS_RECIPIENTS='my-service-recipients.txt'
 ```
 0 11 * * * /drclinics/bot/monitoring.sh DAILY >> /drclinics/telemed/logs/monitoring.log 2>&1
 ```
-- run: sudo service cron reload
+- run: ```sudo service cron reload```
