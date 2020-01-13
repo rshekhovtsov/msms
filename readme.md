@@ -1,8 +1,7 @@
 # Multi-service monitoring script (MSMS)
 
 ## ABOUT
-Simple script to monitore web services using native linux tools: bash, curl & cron.
-Telegram used for notification delivery.
+Simple script to monitore web services using native linux tools: bash, curl & cron, plus Telegram to alerts delivery.
 
 ## SETUP
 
