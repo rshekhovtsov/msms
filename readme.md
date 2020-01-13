@@ -15,13 +15,14 @@ SETUP
  - MSMS_SERVICE_NAME: human-readable name for service
  - MSMS_SERVICE_ENDPOINT: your service endpoint to check with curl
  - MSMS_CURL_PARAMS: parameters for curl, see example below
- - MSMS_EXPECTED: expected service response
+ - MSMS_EXPECTED or MSMS_EXPECTED_FILE: expected service response. Use MSMS_EXPECTED_FILE for long responses.
  - MSMS_RECIPIENTS: file with recipients chat ids
 - example:
 MSMS_SERVICE_NAME='my service'
 MSMS_SERVICE_ENDPOINT='http://0.0.0.0'
 MSMS_CURL_PARAMS='-s -X POST -H "Content-Type: application/json" --connect-timeout 3 -m 7 -d @request.json'
 MSMS_EXPECTED='{"ok","true"}'
+# MSMS_EXPECTED_FILE='my-service-response.json'
 MSMS_RECIPIENTS='my-service-recipients.txt'
 
 4. RUN ON SCHEDULE
