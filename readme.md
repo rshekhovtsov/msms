@@ -11,7 +11,7 @@ Simple script to monitore web services using native linux tools: bash, curl & cr
 
 ### 2. ADD RECIPIENTS
 - recipient should find your bot in telegram and ```/start``` it
-- then run ```./recipients-setup.sh``` and follow instruction
+- then you can run ```./recipients-setup.sh``` and follow instructions
 
 ### 3. CONFIGURE SERVICES TO MONITORE
 - for each service create in folder "services" .ini file with 5 keys:
