@@ -1,16 +1,16 @@
-multi-service monitoring script (MSMS)
+# Multi-service monitoring script (MSMS)
 
-SETUP
+## SETUP
 
-1. CREATE TELEGRAM BOT
+##1. CREATE TELEGRAM BOT
 - find @botfather in telegram and follow instructions
 - get api key for you bot from @botfather and put it into file: telegram-api.key
 
-2. ADD RECIPIENTS
+## 2. ADD RECIPIENTS
 - recipient should find your bot in telegram and /start it
 - then run ./recipients-setup.sh and follow instruction
 
-3. CONFIGURE SERVICES TO MONITORING
+## 3. CONFIGURE SERVICES TO MONITORING
 - for each service in folder "services" create .ini file with 5 keys:
  - MSMS_SERVICE_NAME: human-readable name for service
  - MSMS_SERVICE_ENDPOINT: your service endpoint to check with curl
@@ -26,7 +26,7 @@ MSMS_EXPECTED='{"ok","true"}'
 # MSMS_EXPECTED_FILE='my-service-response.json'
 MSMS_RECIPIENTS='my-service-recipients.txt'
 ```
-4. RUN ON SCHEDULE
+## 4. RUN ON SCHEDULE
 - run: sudo crontab -e
 - to check service every minute and send alert if service unavailable or response unexpectedly, add line:
 ```
