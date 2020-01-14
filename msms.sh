@@ -8,7 +8,7 @@
 #################################################################
 
 # telegram endpoint
-TG_API_URL="https://api.telegram.org/bot$(cat ../telegram-api.key)/sendMessage"
+TG_API_URL="https://api.telegram.org/bot$(cat ../telegram-api-key.txt)/sendMessage"
 
 #################################################################
 # send message to telegram
